@@ -1,1 +1,3 @@
-This commits adds two routes "/" and "/index" both routes leads to a "Welcome" message.
+This commits adds a flask function called "render_template", this function allows to called an specific html template in the app.
+
+Using the render_template function the homepage function was changed to simplify the code and to called the file index.html created at the folder "templates" 
