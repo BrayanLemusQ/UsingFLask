@@ -1,6 +1,2 @@
-This commits uses the function "render_template" hability to pass variables to the html file by passing an extra argument in the function call
-which must have the name of the variable.
-    render_template("example.html, <variable_name>)
-
-The goodbye function is also changed to use the render_template function.
-Finally a variable "name" is passed to the homepage and the goodbye page as an argument
+This commits uses the jinja function to extends a template, homepage and goodbye page copy the base.html content except the block main
+the block main is individually edited on each page to set the required message.
