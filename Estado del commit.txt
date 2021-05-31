@@ -1,3 +1,6 @@
-This commits adds a flask function called "render_template", this function allows to called an specific html template in the app.
+This commits uses the function "render_template" hability to pass variables to the html file by passing an extra argument in the function call
+which must have the name of the variable.
+    render_template("example.html, <variable_name>)
 
-Using the render_template function the homepage function was changed to simplify the code and to called the file index.html created at the folder "templates" 
+The goodbye function is also changed to use the render_template function.
+Finally a variable "name" is passed to the homepage and the goodbye page as an argument
