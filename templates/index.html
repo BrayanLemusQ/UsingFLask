@@ -1,10 +1,13 @@
 {% extends "base.html" %}
+
 {% block main %}
-        <h1>Welcome {{ name }}</h1>
-        <h2>Task List</h2>
-        <ul>
-                {% for task in tasks %}
-                <li>{{ task.title }}</li>
-                {% endfor %}
-        </ul>
+  {% for task in tasks %}
+    <div class="card">
+      <div class="card-body">
+        <h3>{{ task.title }}</h3>
+        <a href="{{ url_for('edit', task_id=task.id) }}" class="btn btn-primary">Editar</a>
+        <a href="#" class="btn btn-danger">Eliminar</a>
+      </div>
+    </div>
+  {% endfor %}
 {% endblock %}

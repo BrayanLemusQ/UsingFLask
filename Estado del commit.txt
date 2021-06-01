@@ -1,11 +1,19 @@
-This commits imports the instance db from the app.py to save the text typed on the stringfield as a new task
-imports the function redirect and url_for from flask to redirect the flow to index once a new task has been submitted
+This commits changes the templates:
+    add.html    
+        It creates a friendlier interface where it shows "New Task", the string field and the submmit bottom
+    base.html
+        It creates a friendlier interface where it shows two options "Task" and "Add" that redirect to index and add respectively
+        It creates a space to show the flashed messages
+        It uses bootstrap css
+    index.html
+        It creates "n" division that stands for the amount of tasks saved on the database, each division counts with a edit bottom and a delete bottom
+Creates template:
+    edit.html
+        It creates a route that leads to an edit page where a stringfield and a submmit bottom can be found
+    delete.html
+        This file is created but is not used jet
 
-In order to save the new task on the database the add function uses the following code lines:
-    db.session.add(task)
-    db.session.commit()
-
-In order to read the tasks saved on the data base the index function uses the following code lines:
-    tasks = Task.query.all()
-
-In order to show the tasks saved on the data based the inde.html uses a for to print as an unorder list each task.
+changes: 
+    routes.py
+        A edit route is created, this function allows to change the title of a specific task. It receive the task_id as a parameter and validates if a new title is typed, if is not the task remains the same.
+        It also show flash messages that announce if a change was made or not. 
