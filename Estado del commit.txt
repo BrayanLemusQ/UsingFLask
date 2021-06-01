@@ -1,4 +1,5 @@
-This commits install the flask-WTF librarie to use WTForms. 
-It also create a forms.py file that creates the class AddTaskForm, so a form can be created with an structure of Stringfield and submitfield.
+This commits install the flask-SQLAlchemy librarie
 
-It creates a new route that contains the new form.
+It validates the submit bottom, when this bottom is activated the value on the StringField is captrated and post it as a subtitle h1 in the add page
+The routes.py is modified so the add function validates the activation of the submitfield
+The add.html file is modified to change by the time a new value for title appears.
