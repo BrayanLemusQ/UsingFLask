@@ -1,12 +1,14 @@
-from app import app
-from flask import render_template
+from app import app, db
+from flask import render_template, redirect, url_for
+from models import Task
 import forms
 
 
 @app.route('/')
 @app.route('/index')
 def homepage():
-    return render_template("index.html", name="Brayan Lemus")
+    tasks = Task.query.all()
+    return render_template("index.html", tasks = tasks)
 
 @app.route('/goodbye')
 def goodbyepage():
@@ -16,5 +18,8 @@ def goodbyepage():
 def add():
     form = forms.AddTaskForm()
     if form.validate_on_submit():
-        return render_template("add.html", form=form, title=form.title.data)
+        task = Task(title=form.title.data)
+        db.session.add(task)
+        db.session.commit()
+        return redirect(url_for("homepage"))
     return render_template("add.html", form=form)

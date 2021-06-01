@@ -1,11 +1,11 @@
-This commits imports the class SQLAlchemy and creates a instance db "database" in the app file.
+This commits imports the instance db from the app.py to save the text typed on the stringfield as a new task
+imports the function redirect and url_for from flask to redirect the flow to index once a new task has been submitted
 
-A models.py file is created and it contents a class Task with the db.model structured, this structure consists of an ID and a title.
+In order to save the new task on the database the add function uses the following code lines:
+    db.session.add(task)
+    db.session.commit()
 
-You can verify the functionality of the code by typing the following instruction on the python terminal:
-    from app import db    
-    from models import db
-    db.create_all()
-    from models import Task
-    task1 = Task(title="Task Name")
+In order to read the tasks saved on the data base the index function uses the following code lines:
+    tasks = Task.query.all()
 
+In order to show the tasks saved on the data based the inde.html uses a for to print as an unorder list each task.
