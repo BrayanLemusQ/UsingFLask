@@ -42,3 +42,19 @@ def edit(task_id):
     else:
         flash('The task was not found')
         return redirect(url_for("homepage"))
+
+@app.route('/delete<int:task_id>', methods=["POST", "GET"])
+def delete(task_id):
+    task = Task.query.get(task_id)
+    form = forms.DeleteTaskForm()
+
+    if task:
+        if form.validate_on_submit():
+            db.session.delete(task)
+            db.session.commit()
+            flash('The task has beeen deleted')
+            return redirect(url_for("homepage"))
+        return render_template("delete.html", form=form, task_id=task_id, title=task.title)
+    else:
+        flash('The task was not found')
+        return redirect(url_for("homepage"))

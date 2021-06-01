@@ -1,19 +1,13 @@
 This commits changes the templates:
-    add.html    
-        It creates a friendlier interface where it shows "New Task", the string field and the submmit bottom
-    base.html
-        It creates a friendlier interface where it shows two options "Task" and "Add" that redirect to index and add respectively
-        It creates a space to show the flashed messages
-        It uses bootstrap css
-    index.html
-        It creates "n" division that stands for the amount of tasks saved on the database, each division counts with a edit bottom and a delete bottom
-Creates template:
-    edit.html
-        It creates a route that leads to an edit page where a stringfield and a submmit bottom can be found
+creates:
     delete.html
-        This file is created but is not used jet
+        a delete.html is created to show a question that ask if the task should be deleted or not
 
 changes: 
     routes.py
-        A edit route is created, this function allows to change the title of a specific task. It receive the task_id as a parameter and validates if a new title is typed, if is not the task remains the same.
+        A delete route is created, this function allows to delete a specific task. It receive the task_id as a parameter and validates if the submmit bottom is activated, if is not the task remains the same.
         It also show flash messages that announce if a change was made or not. 
+    index.html
+        the url is modified so the delete bottom leads to delete.html 
+    form.py
+        a new class is created to show a new form that shows the task a delet bottom and a cancel bottom
