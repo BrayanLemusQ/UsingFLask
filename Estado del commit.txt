@@ -1,4 +1,4 @@
-This commits reorganizes the code so it can be more simple, it creates a routes.py file that contents all the routes that are need it to the web application
-To do so, is important to import all in the app.py file from the routes.py file inmediatelly after the app is created
+This commits install the flask-WTF librarie to use WTForms. 
+It also create a forms.py file that creates the class AddTaskForm, so a form can be created with an structure of Stringfield and submitfield.
 
-The line from OS import name is deleted becouse it was an error, and this function was not used.
+It creates a new route that contains the new form.
