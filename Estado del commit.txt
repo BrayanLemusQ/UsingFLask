@@ -1,5 +1,11 @@
-This commits install the flask-SQLAlchemy librarie
+This commits imports the class SQLAlchemy and creates a instance db "database" in the app file.
 
-It validates the submit bottom, when this bottom is activated the value on the StringField is captrated and post it as a subtitle h1 in the add page
-The routes.py is modified so the add function validates the activation of the submitfield
-The add.html file is modified to change by the time a new value for title appears.
+A models.py file is created and it contents a class Task with the db.model structured, this structure consists of an ID and a title.
+
+You can verify the functionality of the code by typing the following instruction on the python terminal:
+    from app import db    
+    from models import db
+    db.create_all()
+    from models import Task
+    task1 = Task(title="Task Name")
+
